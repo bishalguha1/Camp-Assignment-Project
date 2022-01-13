@@ -157,6 +157,18 @@ function campassign_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	// Page Sidebar
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'page-sidebar', 'campassign' ),
+			'id'            => 'page-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'campassign' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'campassign_widgets_init' );
 
@@ -181,6 +193,7 @@ function campassign_scripts() {
 	wp_enqueue_script( 'owl-js', get_theme_file_uri ('assets/js/owl.carousel.min.js'), array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'switch-js', get_theme_file_uri ('assets/js/switch.js'), array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'main-theme-js', get_theme_file_uri ('assets/js/main.js'), array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'lottie-js', '//unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', array('jquery'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -207,6 +220,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * tgm activation
+ */
+require get_template_directory() . '/inc/plugin-installation.php';
 
 /**
  * Load Jetpack compatibility file.
