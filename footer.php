@@ -79,8 +79,9 @@
                     <i class="icon_close"></i>
                 </button>
                 <form class="search-form" action="#">
-                    <input type="search" value="" placeholder="What are you looking for?">
-                    <button type="submit" class="search-btn">search</button>
+                    <?php get_search_form(); ?>
+                    <!-- <input type="search" value="" placeholder="What are you looking for?">
+                    <button type="submit" class="search-btn">search</button> -->
                 </form>
             </div>
         </div>
