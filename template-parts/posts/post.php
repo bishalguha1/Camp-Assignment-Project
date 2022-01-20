@@ -62,6 +62,16 @@
                 <li>
                     <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author_meta('display_name') ?></a>
                 </li>
+                <li>
+                    <?php 
+                        $campassign_post_formats = get_post_format();
+                        if($campassign_post_formats == 'audio'){
+                            echo '<span class="dashicons dashicons-format-audio"></span>';
+                        }else if($campassign_post_formats == 'video'){
+                            echo '<span class="dashicons dashicons-format-video"></span>';
+                        }
+                    ?>
+                </li>
                 <li class="dot"></li>
                 <li><?php echo get_the_date(); ?></li>
             </ul>

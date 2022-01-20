@@ -79,6 +79,8 @@ if ( ! function_exists( 'campassign_setup' ) ) :
 			)
 		);
 
+		add_theme_support( 'post-formats', array( 'gallery', 'audio' , 'video' , 'quote', 'link' ) );
+
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
@@ -185,6 +187,7 @@ function campassign_scripts() {
 	wp_enqueue_style( 'owl-css', get_theme_file_uri('assets/css/owl.carousel.css'), array(), _S_VERSION );
 	wp_enqueue_style( 'custom-css', get_theme_file_uri('assets/css/custom.css'), array(), _S_VERSION );
 	wp_enqueue_style( 'main-theme-style', get_theme_file_uri('assets/css/style.css'), array(), _S_VERSION );
+	wp_enqueue_style('dashicons');
 
 	wp_enqueue_script( 'campassign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'popper-js', get_theme_file_uri('assets/js/popper.min.js'), array('jquery'), _S_VERSION, true );
